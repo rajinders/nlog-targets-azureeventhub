@@ -38,7 +38,7 @@ See below for sample NLog configuration.
 This package references NLog Version 3.2.0.0   
 
 ## Azure ServiceBus SDK
-This package also has a dependency on 2.6.1  
+This package also has a dependency on Azure ServieBus SDK 2.6.1  
 
 
    
