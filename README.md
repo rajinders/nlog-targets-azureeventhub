@@ -2,5 +2,8 @@
 NLog Target for Azure ServiceBus [EventHub](http://azure.microsoft.com/en-us/services/event-hubs/)
 
 ## Installation
-You can install this target using NuGet.
+You can install this target using NuGet.   
+
+`Install-Package nlog.targets.azureeventhub`
+ 
 
