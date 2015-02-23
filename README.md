@@ -11,7 +11,7 @@ See the included demo project to see how you can use this NLog target to send yo
 See below for sample NLog configuration.  
 - EventHubConnectionString is a required parameter. You should create a Shared Access Signature with Send Permissions
 - EventHubPath is a required parameter. This should be name of your EventHub
-- PartitionKey is optional pararmeter. If you don't specify this parameter the messages sent to EventHub will be distributed among partitions in a round robin manner. 
+- PartitionKey is optional pararmeter. If you don't specify this parameter the messages sent to EventHub will be distributed among event hub partitions in a round robin manner. 
 
 
 
