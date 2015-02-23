@@ -19,7 +19,7 @@ See below for sample NLog configuration.
   		<variable name="DefaultLayout" value="${longdate} | ${level:uppercase=true:padding=5} | ${message} | ${exception:format=type,tostring}" />
 
   		<targets>
-    		<target name="eh" type="AzureEventHub" layout="${DefaultLayout}" EventHubConnectionString="Endpoint=sb://yournamespace/;SharedAccessKeyName=send;SharedAccessKey=yourkey;TransportType=Amqp" EventHubPath="rajnlogeventhub" PartitionKey=""/>
+    		<target name="eh" type="AzureEventHub" layout="${DefaultLayout}" EventHubConnectionString="Endpoint=sb://yournamespace/;SharedAccessKeyName=send;SharedAccessKey=yourkey;TransportType=Amqp" EventHubPath="eventhubname" PartitionKey=""/>
     		<target name="ColorConsole" xsi:type="ColoredConsole" layout="${DefaultLayout}" />
   		</targets>
 
