@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>NLog.Targets.AzureEventHub</id>
+    <version>1.0.0.0</version>
+	  <authors>Rajinder Singh</authors>
+	  <description>NLog target that writes to Azure Event Hubs.</description>
+    <title>NLog.Targets.AzureEventHub</title>
+    <projectUrl>https://github.com/rajinders/nlog-targets-azureeventhub</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <language>en-US</language>
+    <tags>NLog Azure EventHub</tags>
+	<dependencies> 
+		<dependency id="Nlog" version="3.2.0.0" /> 
+		<dependency id="WindowsAzure.ServiceBus" version="2.6.1" /> 
+    </dependencies> 
+  </metadata>
+</package>

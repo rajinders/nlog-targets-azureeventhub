@@ -37,7 +37,6 @@ StyleCop.*
 # exclude other locations
 _UpgradeReport_Files/
 _ReSharper.*/
-src/NLog.Targets.AzureEventHub/packages/
 packages/
-src/DemoNLogAzureEventHub/Nlog.config
+#src/DemoNLogAzureEventHub/Nlog.config
 *.nupkg
