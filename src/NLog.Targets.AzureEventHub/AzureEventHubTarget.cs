@@ -34,7 +34,16 @@ namespace NLog.Targets
         /// <param name="logEvent"></param>
         protected override void Write(LogEventInfo logEvent)
         {
-            SendAsync(PartitionKey, logEvent);
+            var sendTask = SendAsync(PartitionKey, logEvent);
+
+            try
+            {
+                sendTask.Wait();
+            }
+            catch (AggregateException ae)
+            {
+                throw ae.InnerException;
+            }
         }
 
         private async Task<bool> SendAsync(string partitionKey, LogEventInfo logEvent)
