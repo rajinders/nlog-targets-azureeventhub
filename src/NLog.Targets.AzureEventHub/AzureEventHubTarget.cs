@@ -28,13 +28,31 @@ namespace NLog.Targets
         /// </summary>
         public string PartitionKey { get; set; }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _eventHubClient.Close();
+                _messsagingFactory.Close();
+            }
+        }
+
         /// <summary>
         /// Takes the contents of the LogEvent and sends the message to EventHub
         /// </summary>
         /// <param name="logEvent"></param>
         protected override void Write(LogEventInfo logEvent)
         {
-            SendAsync(PartitionKey, logEvent);
+            var sendTask = SendAsync(PartitionKey, logEvent);
+
+            try
+            {
+                sendTask.Wait();
+            }
+            catch (AggregateException ae)
+            {
+                throw ae.InnerException;
+            }
         }
 
         private async Task<bool> SendAsync(string partitionKey, LogEventInfo logEvent)
